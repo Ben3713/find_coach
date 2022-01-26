@@ -3,16 +3,17 @@
 
 
 
-<%= simple_form_for(@professionel) do |c| %>
-  <%= c.label :name %>
-  <%= c.text_field :name %>
-  <%= c.label :adress %>
-  <%= c.text_field :adress %>
-  <%= c.label :category %>
-  <%= c.text_field :category %>
-  <%= c.label :tarif %>
-  <%= c.text_field :tarif %>
- <%= c.submit %>
+<%= simple_form_for(@professionel) do |p| %>
+  <%= p.label :name %>
+  <%= p.text_field :name %>
+  <%= p.label :adress %>
+  <%= p.text_field :adress %>
+  <%= p.label :category %>
+  <%= p.text_field :category %>
+  <%= p.label :tarif %>
+  <%= p.text_field :tarif %>
+  <%= p.input :photo, as: :file %>
+ <%= p.submit %>
 <% end %>
 
 <%= link_to "retour a l'index", professionels_path  %>
