@@ -37,6 +37,9 @@ class ProfessionelsController < ApplicationController
     @professionel.destroy
     redirect_to professionels_path
   end
+
+  private
+
   def pro_params
     params.require(:professionel).permit(:name, :address, :category, :tarif)
 
