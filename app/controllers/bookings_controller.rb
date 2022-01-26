@@ -19,35 +19,36 @@ class BookingsController < ApplicationController
     @booking.professionel = @professionel
     @booking.user = current_user
     if @booking.save
-      redirect_to professionels_path
+      redirect_to professionel_bookings_path(@professionel, @booking)
     else
       render :new
+    end
 
   end
 
   def edit
-    @booking = Booking.find(parma[:id])
+    @booking = Booking.find(params[:id])
     @professionel = Professionel.find(params[:professionel_id])
 
   end
 
   def update
-    @booking = Booking.find(parma[:id])
+    @booking = Booking.find(params[:id])
     @professionel = Professionel.find(params[:professionel_id])
     @booking.update(book_params)
     redirect_to professionel_bookings_path(@professionel,@booking)
 
   end
 
-  def
-    @booking = Booking.find(parma[:id])
+  def destroy
+    @booking = Booking.find(params[:id])
     @professionel = Professionel.find(params[:professionel_id])
-    @booking.destroyred
+    @booking.destroy
     redirect_to professionel_bookings_path(@professionel,@booking)
   end
 
   private
-  
+
   def book_params
     params.require(:booking).permit(:date_resa, :total_resa)
   end

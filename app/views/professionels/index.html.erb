@@ -1,2 +1,27 @@
-<h1>Professionels#index</h1>
-<p>Find me in app/views/professionels/index.html.erb</p>
+<h1>Trouve un professionel de ton choix </h1>
+<p>Choisie un coach,babysiter ou un kiné </p>
+
+<% @professionels.each do |pro| %>
+ <div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2><%=pro.category %></h2>
+    <p><%= pro.name %><strong><%= pro.adress %></strong><%= pro.tarif %>
+    </p>
+  </div>
+</div>
+<%= link_to "book this coach", new_professionel_booking_path(pro,@booking), class:"btn btn-success"%>
+<%= link_to "edit", edit_professionel_path(pro),class:"btn btn-primary" %>
+            <%= link_to "",
+            professionel_path(pro),
+            method: :delete,
+            class: "fa fa-trash",
+            data: { confirm: "Are you sure?" } %>
+</p>
+
+
+<%end %>
+<br>
+
+
+<%= link_to "create new professionel", new_professionel_path, class:"btn btn-primary"  %>

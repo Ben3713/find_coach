@@ -1,2 +1,17 @@
-<h1>Professionels#edit</h1>
+<h1>edit ton pro</h1>
 <p>Find me in app/views/professionels/edit.html.erb</p>
+
+
+<%= simple_form_for(@professionel) do |c| %>
+  <%= c.label :name %>
+  <%= c.text_field :name %>
+  <%= c.label :adress %>
+  <%= c.text_field :adress %>
+  <%= c.label :category %>
+  <%= c.text_field :category %>
+  <%= c.label :tarif %>
+  <%= c.text_field :tarif %>
+ <%= c.submit %>
+<% end %>
+
+<%= link_to "retour a l'index", professionels_path  %>

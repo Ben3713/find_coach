@@ -1,2 +1,17 @@
 <h1>Bookings#index</h1>
 <p>Find me in app/views/bookings/index.html.erb</p>
+
+<% @bookings.each do |book| %>
+<br>
+ <p><%= book.date_resa %> <%= book.professionel.name %>
+ <%= link_to "edit", edit_professionel_booking_path(@professionel,book),  class:"btn btn-danger" %>
+ <%= link_to "",
+            professionel_booking_path(@professionel,book),
+            method: :delete,
+            class: "fa fa-trash",
+            data: { confirm: "Are you sure?" } %>
+
+ </p>
+<% end %>
+<br>
+<%= link_to "retour a l'index", professionels_path, class:"btn btn-danger"  %>

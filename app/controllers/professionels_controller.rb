@@ -17,6 +17,7 @@ class ProfessionelsController < ApplicationController
       redirect_to professionels_path
     else
       render :new
+    end
   end
 
   def edit
@@ -28,7 +29,7 @@ class ProfessionelsController < ApplicationController
   def update
      @professionel = Professionel.find(params[:id])
      @professionel = Professionel.update(pro_params)
-     redirect_to professionel_path(@professionel)
+     redirect_to professionels_path
 
   end
 
@@ -41,7 +42,6 @@ class ProfessionelsController < ApplicationController
   private
 
   def pro_params
-    params.require(:professionel).permit(:name, :address, :category, :tarif)
-
+    params.require(:professionel).permit(:name, :adress, :category, :tarif)
   end
 end

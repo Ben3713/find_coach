@@ -1,2 +1,11 @@
 <h1>Bookings#new</h1>
 <p>Find me in app/views/bookings/new.html.erb</p>
+
+
+<%= simple_form_for([@professionel,@booking]) do |b| %>
+
+  <%= b.input :date_resa %>
+  <%= b.submit %>
+<% end %>
+
+<%= link_to "retour a l'index", professionels_path, class:"btn btn-danger"  %>
