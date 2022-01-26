@@ -42,6 +42,6 @@ class ProfessionelsController < ApplicationController
   private
 
   def pro_params
-    params.require(:professionel).permit(:name, :adress, :category, :tarif)
+    params.require(:professionel).permit(:name, :adress, :category, :tarif, :photo)
   end
 end
