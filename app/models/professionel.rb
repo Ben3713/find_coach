@@ -1,0 +1,2 @@
+class Professionel < ApplicationRecord
+end
