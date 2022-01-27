@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_26_233319) do
+ActiveRecord::Schema.define(version: 2022_01_27_115208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 2022_01_26_233319) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "professionel_id"
+    t.index ["professionel_id"], name: "index_reviews_on_professionel_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -100,6 +102,7 @@ ActiveRecord::Schema.define(version: 2022_01_26_233319) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "professionels"
   add_foreign_key "bookings", "users"
+  add_foreign_key "reviews", "professionels"
   add_foreign_key "reviews", "users"
   add_foreign_key "reviewws", "users"
 end

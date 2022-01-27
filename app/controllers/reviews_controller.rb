@@ -8,7 +8,8 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @professionel = Professionel.find(params[:professionel_id])
     @review.user = current_user
-    if @review.save
+    @review.professionel = @professionel
+    if @review.save!
       redirect_to professionels_path
     else
       flash[:alert] = "Something went wrong."

@@ -11,6 +11,10 @@
   <div class="card-product-infos">
     <h2><%=pro.category %></h2>
     <p><%= pro.name %> Adress: <%= pro.adress %> Prix: <%= pro.tarif %>
+    <% if pro.reviews.find_by(user: current_user) != nil %> Nombre vote:
+    <%= pro.reviews.find_by(user: current_user).rating  %>
+    <% end %>
+
     </p>
   </div>
 </div>
@@ -30,5 +34,4 @@
 
 
 <%= link_to "create new professionel", new_professionel_path, class:"btn btn-primary"  %>
-
 
