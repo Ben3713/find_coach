@@ -10,7 +10,7 @@
   <% end %>
   <div class="card-product-infos">
     <h2><%=pro.category %></h2>
-    <p><%= pro.name %><strong><%= pro.adress %></strong><%= pro.tarif %>
+    <p><%= pro.name %> Adress: <%= pro.adress %> Prix: <%= pro.tarif %> 
     </p>
   </div>
 </div>
@@ -21,6 +21,7 @@
             method: :delete,
             class: "fa fa-trash",
             data: { confirm: "Are you sure?" } %>
+<%= link_to "voter",new_professionel_review_path(pro,@review) %>
 </p>
 
 
@@ -29,3 +30,5 @@
 
 
 <%= link_to "create new professionel", new_professionel_path, class:"btn btn-primary"  %>
+
+<%= console %>
